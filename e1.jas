@@ -1,0 +1,26 @@
+.main
+
+.var
+a
+b
+c
+.end-var
+
+start:  bipush 0x07
+        istore a
+        bipush 0x07
+        istore b
+        iload a
+        iload b
+        isub
+        istore c
+        iload c
+        iflt l1
+        iload c
+        ifeq l1
+        bipush 0x01
+        goto l2
+l1:     bipush 0x00
+l2:     istore c
+
+.end-main
